@@ -37,7 +37,7 @@ Smart-Expense-Tracker/
 ├── tests/                    # Unit and integration tests
 ├── requirements.txt          # Project dependencies
 ├── README.md                 # Project documentation
-└── main.py                   # Entry point for the app
+└── app.py                   # Entry point for the app
 
 ---
 
