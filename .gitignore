@@ -1,0 +1,12 @@
+# Virtual environment
+env/
+
+# Byte-compiled files
+*.pyc
+__pycache__/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
