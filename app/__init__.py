@@ -1,6 +1,9 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy  # Make sure to import SQLAlchemy
 from config import Config
+
+# Initialize the SQLAlchemy object
+db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
@@ -11,7 +14,7 @@ def create_app():
     # Initialize SQLAlchemy with the app
     db.init_app(app)  # Bind the db object to the app
 
-    # Keep your original blueprint registration logic intact
+    # Register your blueprint
     from .routes import main
     app.register_blueprint(main)
 

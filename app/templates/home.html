@@ -4,8 +4,117 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Expense Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #4caf50;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.5em;
+        color: #333;
+      }
+      .links {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .links a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .links a:hover {
+        background-color: #45a049;
+      }
+      .expense-form {
+        margin-top: 30px;
+        text-align: center;
+      }
+      input,
+      button {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="date"] {
+        width: 200px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome to Smart Expense Tracker!</h1>
+    <header>
+      <h1>Welcome to Smart Expense Tracker!</h1>
+    </header>
+
+    <div class="container">
+      <div class="links">
+        <a href="/add_expense">Add Expense</a>
+        <a href="/get_expenses">View Expenses</a>
+      </div>
+
+      <!-- Expense Form -->
+      <div class="expense-form">
+        <h2>Add New Expense</h2>
+        <form action="/add_expense" method="POST">
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" required /><br />
+
+          <label for="category">Category:</label>
+          <input type="text" id="category" name="category" required /><br />
+
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required /><br />
+
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            required
+          /><br />
+
+          <label for="payment_method">Payment Method:</label>
+          <input
+            type="text"
+            id="payment_method"
+            name="payment_method"
+            required
+          /><br />
+
+          <label for="merchant">Merchant:</label>
+          <input type="text" id="merchant" name="merchant" required /><br />
+
+          <label for="recurring">Recurring (0 or 1):</label>
+          <input
+            type="number"
+            id="recurring"
+            name="recurring"
+            value="0"
+            min="0"
+            max="1"
+          /><br />
+
+          <button type="submit">Add Expense</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
